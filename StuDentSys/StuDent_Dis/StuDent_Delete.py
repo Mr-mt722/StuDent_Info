@@ -1,7 +1,8 @@
 # 时间    @2023/6/1 20:57
 # 作者    @Wwf
 import os
-import StuDent_insert as inest,StuDent_Show as show
+import StuDent_insert
+import StuDent_Show as show
 
 
 def delete():
@@ -9,9 +10,9 @@ def delete():
         student_id = input('请输入你要删除的学生id')
         if student_id != '':
             # 检查文件是否存在
-            if os.path.exists(inest.filename):
+            if os.path.exists(StuDent_insert.filename):
                 # 读取学生信息
-                with open(inest.filename, 'f', encoding='UTF-8') as file:
+                with open(StuDent_insert.filename, 'f', encoding='UTF-8') as file:
                     # 将学生信息放到一个列表里
                     student_old = file.readlines()
             # 如果文件不存在则创建一个空列表
@@ -20,7 +21,7 @@ def delete():
             flag = False # 标记是否删除
 
             if student_old:
-                with open(inest.filename, 'f', encoding='UTF-8') as wfile:
+                with open(StuDent_insert.filename, 'f', encoding='UTF-8') as wfile:
                     d= {}
                     for item in student_old:
                         #将字符串转化为字典

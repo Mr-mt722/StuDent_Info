@@ -1,7 +1,7 @@
 # 时间    @2023/5/30 21:36
 # 作者    @Wwf
 import Menu as menu
-from StuDent_Dis import StuDent_insert as insert,StuDent_Delete as delete
+from StuDent_Dis import StuDent_insert as insert
 
 def main():
     while True:
@@ -26,7 +26,7 @@ def main():
                 pass
             # 删除学生信息
             elif choice == 3:
-                 delete.delete()
+                 pass
             # 修改学生信息
             elif choice == 4:
                 pass

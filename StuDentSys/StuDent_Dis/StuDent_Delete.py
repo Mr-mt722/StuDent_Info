@@ -1,45 +1,48 @@
 # 时间    @2023/6/1 20:57
 # 作者    @Wwf
 import os
-import StuDent_insert
-import StuDent_Show as show
+from StuDentSys.StuDent_Dis.StuDent_Show  import StuDent_Show as show
+from StuDentSys.StuDent_Dis.StuDent_insert import StuDent_insert as insert
 
 
-def delete():
-    while True:
-        student_id = input('请输入你要删除的学生id')
-        if student_id != '':
-            # 检查文件是否存在
-            if os.path.exists(StuDent_insert.filename):
-                # 读取学生信息
-                with open(StuDent_insert.filename, 'f', encoding='UTF-8') as file:
-                    # 将学生信息放到一个列表里
-                    student_old = file.readlines()
-            # 如果文件不存在则创建一个空列表
-            else:
-                student_old = []
-            flag = False # 标记是否删除
+class StuDent_Delete():
+    @classmethod
+    def student_delete(cls):
 
-            if student_old:
-                with open(StuDent_insert.filename, 'f', encoding='UTF-8') as wfile:
-                    d= {}
-                    for item in student_old:
-                        #将字符串转化为字典
-                        d = dict(eval(item))
-                        if d['id']!=student_id:
-                            wfile.write(str(d)+'\n')
+        while True:
+            student_id = input('请输入你要删除的学生id')
+            if student_id != '':
+                # 检查文件是否存在
+                if os.path.exists(insert.filename):
+                    # 读取学生信息
+                    with open(insert.filename, 'w', encoding='UTF-8') as file:
+                        # 将学生信息放到一个列表里
+                        student_old = file.readlines()
+                # 如果文件不存在则创建一个空列表
+                else:
+                    student_old = []
+                flag = False  # 标记是否删除
+
+                if student_old:
+                    with open(insert.filename, 'f', encoding='UTF-8') as wfile:
+                        d = {}
+                        for item in student_old:
+                            # 将字符串转化为字典
+                            d = dict(eval(item))
+                            if d['id'] != student_id:
+                                wfile.write(str(d) + '\n')
+                            else:
+                                flag = True
+                        if flag:
+                            print(f'id为{student_id}的学生信息已被删除')
                         else:
-                            flag = True
-                    if flag:
-                        print(f'id为{student_id}的学生信息已被删除')
-                    else:
-                        print(f'没有找到id为{student_id}的学生信息')
-            else:
-                print('无此学生')
-                break
-            show.student_show()#删除后重新显示所有学生信息
-            answer = input('是否继续删除？y/n')
-            if answer.upper() == 'Y':
-                continue
-            else:
-                break
+                            print(f'没有找到id为{student_id}的学生信息')
+                else:
+                    print('无此学生')
+                    break
+                show.student_show()  # 删除后重新显示所有学生信息
+                answer = input('是否继续删除？y/n')
+                if answer.upper() == 'Y':
+                    continue
+                else:
+                    break

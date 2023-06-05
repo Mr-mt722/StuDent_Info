@@ -1,7 +1,9 @@
 # 时间    @2023/5/30 21:36
 # 作者    @Wwf
+import sys
+
 import Menu as menu
-from StuDent_Dis import StuDent_insert as insert
+from StuDent_Dis import StuDent_insert as insert,StuDent_Delete as delete
 
 def main():
     while True:
@@ -20,13 +22,13 @@ def main():
                     continue
             # 录入学生信息
             elif choice == 1:
-                insert.insert()
+                insert.StuDent_insert.student_insert()
             # 查找学生信息
             elif choice == 2:
                 pass
             # 删除学生信息
             elif choice == 3:
-                 pass
+                 delete.StuDent_Delete.student_delete()
             # 修改学生信息
             elif choice == 4:
                 pass
@@ -39,8 +41,10 @@ def main():
             # 显示所有学生信息
             elif choice == 7:
                 pass
+            # elif choice == 0:
+            #     sys.exit()
             else:
-                print('请输入菜单栏中存在的o')
+                print('请输入菜单栏中存在的')
 
 
 if __name__ == '__main__':

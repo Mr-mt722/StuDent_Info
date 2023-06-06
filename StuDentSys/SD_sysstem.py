@@ -17,7 +17,7 @@ def main():
                 # 讲字母转化为大写进行判断
                 if answer.upper() == 'Y':
                     print('谢谢你的使用')
-                    break
+                    sys.exit()
                 else:
                     continue
             # 录入学生信息

@@ -13,9 +13,9 @@ class StuDent_Delete():
             student_id = input('请输入你要删除的学生id')
             if student_id != '':
                 # 检查文件是否存在
-                if os.path.exists(insert.filename):
+                if os.path.exists('student1.txt'):
                     # 读取学生信息
-                    with open(insert.filename, 'w', encoding='UTF-8') as file:
+                    with open('student1.txt', 'r', encoding='UTF-8') as file:
                         # 将学生信息放到一个列表里
                         student_old = file.readlines()
                 # 如果文件不存在则创建一个空列表
@@ -24,7 +24,7 @@ class StuDent_Delete():
                 flag = False  # 标记是否删除
 
                 if student_old:
-                    with open(insert.filename, 'f', encoding='UTF-8') as wfile:
+                    with open('student1.txt', 'w', encoding='UTF-8') as wfile:
                         d = {}
                         for item in student_old:
                             # 将字符串转化为字典

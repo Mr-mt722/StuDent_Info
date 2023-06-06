@@ -41,7 +41,7 @@ class StuDent_insert():
 
         # 调用Save保存
         save.student_save(cls.student_list)
-        student_list = []
+        cls.student_list = []
         print('保存完毕')
 
 

@@ -1,4 +1,0 @@
-<class 'StuDentSys.StuDent_Dis.StuDent_save.StuDent_save'>
-[{'id': '00002', 'name': '很久很久', 'english': 11, 'java': 22, 'python': 33}, {'id': '00003', 'name': '十八', 'english': 55, 'java': 66, 'python': 44}]
-<class 'StuDentSys.StuDent_Dis.StuDent_save.StuDent_save'>
-[{'id': '00002', 'name': '很久很久', 'english': 11, 'java': 22, 'python': 33}, {'id': '00003', 'name': '十八', 'english': 55, 'java': 66, 'python': 44}, {'id': '00004', 'name': '把价格基本', 'english': 22, 'java': 55, 'python': 33}]

@@ -1,8 +1,8 @@
 # 时间    @2023/6/1 20:57
 # 作者    @Wwf
 import os
+import json
 from StuDentSys.StuDent_Dis.StuDent_Show  import StuDent_Show as show
-from StuDentSys.StuDent_Dis.StuDent_insert import StuDent_insert as insert
 
 
 class StuDent_Delete():
@@ -28,7 +28,7 @@ class StuDent_Delete():
                         d = {}
                         for item in student_old:
                             # 将字符串转化为字典
-                            d = dict(eval(item))
+                            d = json.loads(item)
                             if d['id'] != student_id:
                                 wfile.write(str(d) + '\n')
                             else:

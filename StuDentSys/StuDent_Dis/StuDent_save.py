@@ -11,7 +11,7 @@ class StuDent_save():
             except:
                 stu_txt = open(filename, 'w', encoding='UTF-8')
             for item in cls:
-                if not isinstance(item, type):
+                if not isinstance(item, type) and item not None:
                     stu_txt.write(str(item) + '\n')
 
             stu_txt.close()

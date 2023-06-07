@@ -1,19 +1,20 @@
 # 时间    @2023/6/5 21:34
 # 作者    @Wwf
-class StuDent_save():
+import os
 
-    @classmethod
-    def student_save(*cls):
+
+class StuDent_save:
+    @staticmethod
+    def student_save(student_list):
+        """
+        将学生信息保存到文件中
+        :param student_list: 学生信息列表
+        """
         filename = 'student1.txt'
-        if cls != '':
-            try:
-                stu_txt = open(filename, 'a', encoding='UTF-8')
-            except:
-                stu_txt = open(filename, 'w', encoding='UTF-8')
-            for item in cls:
-                if not isinstance(item, type):
-                    stu_txt.write(str(item) + '\n')
+        if not os.path.exists(filename):  # 如果文件不存在，则创建文件
+            with open(filename, 'w', encoding='UTF-8') as f:
+                f.write('')
 
-            stu_txt.close()
-        else:
-            print('数据为空，请重试')
+        with open(filename, 'w', encoding='UTF-8') as f:  # 打开文件，并将学生信息写入文件
+            for student in student_list:
+                f.write(str(student).replace('"', '') + '\n')

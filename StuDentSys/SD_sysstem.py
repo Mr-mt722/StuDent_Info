@@ -3,7 +3,7 @@
 import sys
 
 import Menu as menu
-from StuDent_Dis import StuDent_insert as insert,StuDent_Delete as delete,StuDent_Show as show
+from StuDent_Dis import StuDent_insert as insert,StuDent_Delete as delete,StuDent_Show as show,StuDent_Update as update
 
 def main():
     while True:
@@ -31,7 +31,7 @@ def main():
                  delete.StuDent_Delete.delete_student()
             # 修改学生信息
             elif choice == 4:
-                pass
+                update.StuDent_Update.update_student()
             # 排序
             elif choice == 5:
                 pass

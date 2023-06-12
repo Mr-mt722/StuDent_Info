@@ -1,21 +1,12 @@
 # 时间    @2023/6/12 20:44
 # 作者    @Wwf
 from StuDentSys.StuDent_Dis.StuDent_Show import StuDent_Show as show
-
+from StuDentSys.StuDent_Dis.StuDent_Read import StuDent_Read as read
 
 class StuDent_Update():
     @classmethod
     def update_student(cls):
-        # 打开文件
-        infile = open("student1.txt", "r", encoding="utf-8")
-        # 创建一个空列表用于存储所有学生信息
-        students = []
-        # 循环读取文件中的每一行，将其转化为字典
-        for line in infile:
-            student = eval(line.strip())
-            students.append(student)
-        # 关闭文件
-        infile.close()
+        students = read.read()
         show.show_student()
         while True:
             # 修改特定学生信息
